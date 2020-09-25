@@ -1,6 +1,5 @@
 $(function() {
   var googleSheetKey = '17AJprKjdveCCLqY5zKGiWhJYguvu-x1STIyjs8YaG-s';
-
   // JSON
   var url = 'https://spreadsheets.google.com/feeds/list/' + googleSheetKey + '/od6/public/values?alt=json';
   $.ajax({
@@ -11,39 +10,31 @@ $(function() {
     }
   });
 });
-
 //
 // do stuff
 //
 function doStuff(data) {
   if (data) {
     // console.log('data', data);
-
     var feed = data.feed;
     var rows = feed.entry || [];
     var html = [];
     var alldata = [];
-
     for (var i = 0; i < rows.length; ++i) {
       var row = rows[i];
-
       // populate table body
       // html.push('<tbody>', '<tr>');
       for (var prop in row) {
         if (prop.substring(0, 4) === 'gsx$' && row[prop].$t !== 'undefined') { // sheet data cell
-
           alldata.push(row[prop].$t);
         }
       }
-
     }
     console.log(alldata);
     $('#test2').html(alldata[8]);
     $('#test3').html(alldata[9]);
     $('#test1').html(alldata[10]);
-
     if (alldata[14] === 'TRUE') { // sheet data cell
-
       $('#test4').addClass('show')
     }
   }
@@ -71,7 +62,6 @@ function doStuff(data) {
         xAxes: [{
           stacked: false
         }],
-
         yAxes: [{
           stacked: false,
           ticks: {
@@ -85,7 +75,6 @@ function doStuff(data) {
                 style: 'percent'
               });
             },
-
           }
         }]
       }
@@ -97,27 +86,22 @@ function doStuff(data) {
     data: {
       labels: ['Brown', 'Purple', 'Blue'],
       datasets: [{
-
         data: [alldata[11], alldata[12], alldata[13]],
         backgroundColor: [
-
           'rgba(48, 6, 3, 0.25)',
           'rgba(165, 55, 214, 0.25)',
           'rgba(39, 88, 213, 0.25)'
         ],
         borderColor: [
-
           'rgba(48, 6, 3, 1)',
           'rgba(165, 55, 214, 1)',
           'rgba(39, 88, 213, 1)'
-
         ],
         borderWidth: 1
       }]
     },
     options: {
       scales: {
-
       }
     }
   });

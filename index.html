@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
 	<meta charset="utf-8">
 	<title>Sheet Test</title>
@@ -8,44 +7,30 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" type="text/javascript"> </script>
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	<style>
-	body {
-	  font-family: sans-serif;
-	}
-	.show{
-		display: inline-block;
-	}
+		body {
+			font-family: sans-serif;
+		}
+		.show {
+			display: inline-block;
+		}
 	</style>
-
 </head>
-
 <body class="text-center p-4">
-
 	<div class="text-3xl py-20">
-	Label:  <strong id="test1"></strong>
-	Label: <strong id="test2"></strong>
-	Label: <strong id="test3"></strong>
+		Label: <strong id="test1"></strong>
+		Label: <strong id="test2"></strong>
+		Label: <strong id="test3"></strong>
 	</div>
-
-
- 		<div id="test4" class="text-3xl hidden p-4 bg-green-500 rounded text-white">It's on!</div>
-
-
-
+	<div id="test4" class="text-3xl hidden p-4 bg-green-500 rounded text-white">It's on!</div>
 	<div class="flex">
-
 		<div id="chart2" class="p-16 w-1/2">
 			<canvas id="myChart2" width="300" height="300"></canvas>
 		</div>
-
 		<div id="chart1" class="p-16 w-1/2">
 			<canvas id="myChart" width="300" height="300"></canvas>
 		</div>
-
 	</div>
-
 	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 	<script src="sheets.js"></script>
-
 </body>
-
 </html>
